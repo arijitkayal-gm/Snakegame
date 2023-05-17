@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@600;700&family=Heebo&family=Oswald:wght@700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.body{
+    background: url("../snake.jpg");
+    min-height: 100vh;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#scoreBox{
+    position: absolute;
+    top: 9px;
+    right: 200px;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    font-family: 'Heebo', sans-serif;
+    font-family: 'Oswald', sans-serif;
+}
+
+#highScoreBox{
+    position: absolute;
+    top: 59px;
+    right: 134px;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    font-family: 'Heebo', sans-serif;
+    font-family: 'Oswald', sans-serif; 
+}
+
+#board{
+    background:linear-gradient(rgb(236, 236, 170),rgb(139, 230, 98));
+    width: 90vmin;
+    height: 92vmin;
+    border: solid black;
+    display: grid;
+    grid-template-columns: repeat(18,1fr) ;
+    grid-template-rows: repeat(18,1fr);
+}
+
+.food{
+    background: linear-gradient(cyan,blue);
+    border: 0.25vmin solid black;
+    border-radius: 25px;
+}
+
+.snakehead{
+    background: linear-gradient(orange,crimson);
+    border: 0.25vmin solid rgb(107, 3, 3);
+    border-radius: 14px;
+}
+
+.snakebody{
+    background-color: rgb(255, 1, 1);
+    border: .25vmin solid rgb(238, 235, 82);
+    border-radius: 10px;
+}
