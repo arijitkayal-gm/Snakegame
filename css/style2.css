@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@600;700&family=Heebo&family=Oswald:wght@700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Ensures proper box-sizing */
+}
+
+.body {
+    
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.instructions{
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 5px 15px;
+    border-radius: 10px;
+    opacity: 80%;
+}
+
+.score-container {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#scoreBox, #highScoreBox {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 5px 15px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+#board {
+    background: var(--board);
+    width: 90vmin;
+    height: 90vmin;
+    border: solid black;
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: repeat(18, 1fr);
+}
+
+
+/* Responsive Snake and Food */
+.food, .snakehead, .snakebody {
+    width: 100%;
+    height: 100%;
+}
+
+.food {
+    background: var(--food);
+    border-radius: 50%;
+    border: 0.3vmin solid #8B0000;
+}
+
+.snakehead {
+    background: var(--snake-head);
+    border-radius: 30%;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
+}
+
+.snakebody {
+    background: var(--snake-body);
+    border-radius: 20%;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Modal Button */
+.modal-btn {
+    background: #ff9800;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 20px;
+}
+
+.modal-btn:hover {
+    background: #ff5722;
+}
+
+/* Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Arrow Key Controls */
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.key {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+}
+
+.key:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #ff5722, #ff9800);
+}
+
+
+/* 🔹 RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .score-container {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #scoreBox, #highScoreBox {
+        font-size: 1.5rem; /* Smaller screens need smaller text */
+    }
+    
+    #board {
+        width: 85vmin; 
+        height: 85vmin; /* Adjust for smaller screens */
+    }
+
+    .key {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    #scoreBox, #highScoreBox {
+        font-size: 1.2rem; /* Even smaller text */
+    }
+
+    #board {
+        width: 80vmin;
+        height: 80vmin;
+    }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#themeToggle {
+    right: 100px;
+}
+
+#themeToggle:hover, #muteButton:hover {
+    background: #292929;
+}
+
+#muteButton {
+    right: 20px;
+
+}
+
+.button{
+    position: fixed;
+    bottom: 10px;
+    background: #000000;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
