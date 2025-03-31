@@ -100,7 +100,11 @@ function gameEngine(){
 
 //Main logic
 bgSound.loop = true;
-bgSound.play();
+document.addEventListener("keydown", () => {
+    if (bgSound.paused) {
+        bgSound.play().catch(error => console.log("Autoplay blocked:", error));
+    }
+}, { once: true }); //to make user interaction before playing bgmusic
 //highscore
 let highscore=localStorage.getItem("highscore");
 if(highscore===null){
