@@ -127,22 +127,22 @@ document.addEventListener("keydown",(e)=>{
 
     switch (e.key) {
         case "ArrowUp":
-            console.log("ArrowUp")
+            //console.log("ArrowUp")
             inputDirection.x=0;
             inputDirection.y=-1;
             break;
         case "ArrowDown":
-            console.log("ArrowDown")
+            //console.log("ArrowDown")
             inputDirection.x=0;
             inputDirection.y=1;
             break;
         case "ArrowLeft":
-            console.log("ArrowLeft")
+            //console.log("ArrowLeft")
             inputDirection.x=-1;
             inputDirection.y=0;
             break;
         case "ArrowRight":
-            console.log("ArrowRight")
+            //console.log("ArrowRight")
             inputDirection.x=1;
             inputDirection.y=0;
             break;
