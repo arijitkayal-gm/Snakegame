@@ -111,7 +111,6 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -174,7 +173,7 @@
 }
 
 
-/* 🔹 RESPONSIVE DESIGN */
+/*  RESPONSIVE DESIGN */
 @media (max-width: 768px) {
     .score-container {
         position: static;
@@ -234,10 +233,6 @@
     right: 100px;
 }
 
-#themeToggle:hover, #muteButton:hover {
-    background: #292929;
-}
-
 #muteButton {
     right: 20px;
 
@@ -246,13 +241,24 @@
 .button{
     position: fixed;
     bottom: 10px;
-    background: #000000;
-    color: white;
+    background: linear-gradient(to bottom, #b4b4b42f, #ffffff00);
+    color: #ffffff;
     padding: 12px 18px;
-    border: none;
+    border-top: none;
+    border-left: none;
+    border-right: 1px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: transform 0.3s ease;
+}
+.button:hover {
+background: linear-gradient(to bottom, #b4b4b448, #ffffff1e);
+  
+}
+.button:active {
+      border-right: none;
+    border-bottom: .5px solid #ffffff;
 }
